@@ -1,0 +1,1 @@
+define(["./fnToString"],function(a){return a.call(Object)});

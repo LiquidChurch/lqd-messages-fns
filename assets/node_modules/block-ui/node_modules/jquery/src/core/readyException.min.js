@@ -1,0 +1,1 @@
+define(["../core"],function(a){a.readyException=function(b){window.setTimeout(function(){throw b})}});

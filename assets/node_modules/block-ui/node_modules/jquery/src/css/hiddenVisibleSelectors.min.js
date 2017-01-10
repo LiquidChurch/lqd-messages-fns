@@ -1,0 +1,1 @@
+define(["../core","../selector"],function(a){a.expr.pseudos.hidden=function(b){return !a.expr.pseudos.visible(b)};a.expr.pseudos.visible=function(b){return !!(b.offsetWidth||b.offsetHeight||b.getClientRects().length)}});

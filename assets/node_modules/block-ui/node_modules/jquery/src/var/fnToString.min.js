@@ -1,0 +1,1 @@
+define(["./hasOwn"],function(a){return a.toString});
