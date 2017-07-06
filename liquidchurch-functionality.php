@@ -45,37 +45,12 @@
     );
     
     /**
+     * Use composer autoload.
      * Autoloads files with classes when needed
      *
-     * @since  NEXT
-     * @param  string $class_name Name of the class being requested.
-     * @return void
+     * @since  0.5.2
      */
-    function lc_func_autoload_classes($class_name)
-    {
-        if (0 !== strpos($class_name, 'LCF_')) {
-            return;
-        }
-        
-        $filename = strtolower(str_replace(
-            '_', '-',
-            substr($class_name, strlen('LCF_'))
-        ));
-        
-        $include_sub_dir = array(
-            'pages'
-        );
-        
-        $status = LiquidChurch_Functionality::include_file('includes/class-' . $filename);
-        if ($status === false) {
-            foreach ($include_sub_dir as $k => $v) {
-                $status = LiquidChurch_Functionality::include_file('includes/' . $v . '/class-' .
-                                                                   $filename);
-            }
-        }
-    }
-    
-    spl_autoload_register('lc_func_autoload_classes');
+    require __DIR__ . '/vendor/autoload.php';
     
     /**
      * Main initiation class

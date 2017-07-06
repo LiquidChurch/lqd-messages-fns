@@ -1,0 +1,26 @@
+{
+  "name": "LiquidChurch Functionality",
+  "description": "GC Sermon Extension.",
+  "keywords": [
+    "wordpress",
+    "plugin"
+  ],
+  "homepage": "https://liquidchurch.com",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "SurajPrGupta, Liquidchurch",
+      "homepage": "https://twitter.com/surajprgupta"
+    }
+  ],
+  "minimum-stability": "dev",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "classmap": [
+      "liquidchurch-functionality.php",
+      "includes/"
+    ]
+  },
+  "require": {
+  }
+}
