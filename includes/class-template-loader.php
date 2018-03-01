@@ -9,7 +9,7 @@
 /**
  * LiquidChurch Functionality Template Loader.
  *
- * @since NEXT
+ * @since 0.1.0
  */
 class LCF_Template_Loader extends GCS_Template_Loader {
 
@@ -20,6 +20,7 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	 * @param string  $name     The name of the specialised template. If array, will take the place of the $args.
 	 * @param array   $args     An array of arguments to extract as variables into the template
 	 *
+	 * @throws Exception
 	 * @return void
 	 */
 	public function __construct( $template, $name = null, array $args = array() ) {
@@ -30,9 +31,11 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	/**
 	 * Add liquid-church template locations to the locations stack.
 	 *
-	 * @since NEXT
+	 * @since 0.1.0
 	 *
 	 * @param array  $locations Modified array of locations.
+	 *
+	 * @return array
 	 */
 	public function add_to_template_stack( $locations ) {
 		$locations = array_reverse( $locations );
@@ -50,9 +53,16 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	/**
 	 * Get a rendered HTML view with the given arguments and return the view's contents.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 *
 	 * @see GCS_Template_Loader::get_template()
+	 *
+	 * @param $template
+	 * @param null $name
+	 * @param array $args
+	 *
+	 * @return string
+	 * @throws Exception
 	 */
 	public static function get_template( $template, $name = null, array $args = array() ) {
 		$view = new self( $template, $name, $args );
@@ -62,9 +72,15 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	/**
 	 * Render an HTML view with the given arguments and output the view's contents.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 *
 	 * @see GCS_Template_Loader::output_template()
+	 *
+	 * @param $template
+	 * @param null $name
+	 * @param array $args
+	 *
+	 * @throws Exception
 	 */
 	public static function output_template( $template, $name = null, array $args = array() ) {
 		$view = new self( $template, $name, $args );

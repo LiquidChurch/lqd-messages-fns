@@ -73,7 +73,7 @@
 .ui-tabs-vertical form {
     float: none;
     width: 70%;
-    margin: 0px auto;
+    margin: 0 auto;
     display: table;
 }
 
@@ -83,7 +83,7 @@
 
 .option-save-button {
     display: table !important;
-    margin: 0px auto !important;
+    margin: 0 auto !important;
     margin-bottom: 10px !important;
 }
 

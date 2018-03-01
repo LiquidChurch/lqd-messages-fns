@@ -10,8 +10,7 @@ class LCF_Option_Page
     /**
      * Parent plugin class
      *
-     * @var   class
-     * @since NEXT
+     * @since 0.1.0
      */
     protected $plugin = null;
 

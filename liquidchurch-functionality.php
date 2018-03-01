@@ -37,20 +37,38 @@
      * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
      */
     
-    require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
-    $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'http://team.scripterz.in/products/liquidchurch/wp-plugin/lqd-messages-fns/meta.json',
-        __FILE__,
-        'gc-sermon'
-    );
-    
     /**
-     * Use composer autoload.
      * Autoloads files with classes when needed
      *
-     * @since  0.5.2
+     * @since  NEXT
+     * @param  string $class_name Name of the class being requested.
+     * @return void
      */
-    require __DIR__ . '/vendor/autoload.php';
+    function lc_func_autoload_classes($class_name)
+    {
+        if (0 !== strpos($class_name, 'LCF_')) {
+            return;
+        }
+        
+        $filename = strtolower(str_replace(
+            '_', '-',
+            substr($class_name, strlen('LCF_'))
+        ));
+        
+        $include_sub_dir = array(
+            'pages'
+        );
+        
+        $status = LiquidChurch_Functionality::include_file('includes/class-' . $filename);
+        if ($status === false) {
+            foreach ($include_sub_dir as $k => $v) {
+                $status = LiquidChurch_Functionality::include_file('includes/' . $v . '/class-' .
+                                                                   $filename);
+            }
+        }
+    }
+    
+    spl_autoload_register('lc_func_autoload_classes');
     
     /**
      * Main initiation class
