@@ -1,17 +1,20 @@
 <?php
 
+/**
+ * Class BaseTest
+ */
 class BaseTest extends WP_UnitTestCase {
 
-	function test_sample() {
+	public function test_sample() {
 		// replace this with some actual testing code
 		$this->assertTrue( true );
 	}
 
-	function test_class_exists() {
+	public function test_class_exists() {
 		$this->assertTrue( class_exists( 'LiquidChurch_Functionality') );
 	}
 	
-	function test_get_instance() {
-		$this->assertTrue( lc_func() instanceof LiquidChurch_Functionality );
+	public function test_get_instance() {
+		$this->assertInstanceOf( LiquidChurch_Functionality::class, lc_func() );
 	}
 }

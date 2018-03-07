@@ -2,7 +2,6 @@
 /**
  * LiquidChurch Functionality Shortcodes Resources Run
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 
@@ -19,6 +18,7 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 	 * @since 0.1.0
 	 */
 	public $shortcode = 'sermon_resources';
+
 	/**
 	 * Default attributes applied to the shortcode.
 	 * @var array
@@ -33,12 +33,12 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		'resource_extra_classes' => '', // For cusotm styling
         'resource_lang' => array(), // For resource language
 	);
+
     /**
      * Additional Resources meta id.
      *
      * @see  LCF_Metaboxes::$resources_meta_id
      * @var   string
-     * @since NEXT
      */
     protected $meta_id = '';
 
@@ -46,15 +46,12 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
      * Additional Resources default language
      *
      * @var   string
-     * @since scripterz-mod
      */
     protected $default_lang = 'eng';
 
 	/**
 	 * Constructor replacement. (Can't use __construct as it does not match
 	 * the abstract WDS_Shortcodes constructor signature)
-	 *
-	 * @since  NEXT
 	 *
 	 * @param  string $meta_id Resource meta id
 	 *
@@ -68,6 +65,7 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 
 	/**
 	 * Shortcode Output
+	 * @throws Exception
 	 */
 	public function shortcode() {
 		$output = $this->_shortcode();
@@ -75,6 +73,12 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		return apply_filters( 'lc_sermon_resources_shortcode_output', $output, $this );
 	}
 
+	/**
+	 * Shortcode
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
     protected function _shortcode()
     {
         $data_type = $this->att('data_type');
@@ -109,6 +113,13 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		return LCF_Template_Loader::get_template( 'sermon-resources-shortcode', $args );
 	}
 
+	/**
+	 * Get Resources
+	 *
+	 * @param $post_id
+	 *
+	 * @return array|mixed
+	 */
     protected function get_resources($post_id)
     {
         $data_type = $this->att('data_type');
@@ -170,6 +181,13 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		return array_filter( $resources, array( $this, 'filter_resources_by_types' ) );
 	}
 
+	/**
+	 * Resource Language Check
+	 *
+	 * @param $resources
+	 *
+	 * @return mixed
+	 */
     protected function resource_lang_check($resources)
     {
         foreach ($resources as $key => $val) {
@@ -180,6 +198,15 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
         return $resources;
     }
 
+	/**
+	 * List Items
+	 *
+	 * @param $resources
+	 * @param $resource_display_name
+	 *
+	 * @return array
+	 * @throws Exception
+	 */
     protected function list_items($resources, $resource_display_name)
     {
         $items = array();
@@ -206,6 +233,13 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
         return $items;
     }
 
+	/**
+	 * Filter Resources by Types
+	 *
+	 * @param $resource
+	 *
+	 * @return bool|mixed
+	 */
 	public function filter_resources_by_types( $resource ) {
 
 		// If this is a url resource
@@ -218,6 +252,11 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		return in_array( $resource['type'], (array) $this->att( 'resource_file_type' ) );
 	}
 
+	/**
+	 * @param $resource
+	 *
+	 * @return bool
+	 */
 	public function is_url_resource( $resource ) {
 		$is_url = ! isset( $resource['type'] ) || ! trim( $resource['type'] );
 		return $is_url;

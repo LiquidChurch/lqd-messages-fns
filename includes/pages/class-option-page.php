@@ -21,7 +21,6 @@ class LCF_Option_Page
     /**
      * Constructor
      *
-     * @since  scripterz-mods
      * @param  object $plugin Main plugin object.
      * @return void
      */
@@ -34,6 +33,11 @@ class LCF_Option_Page
         $this->sections_config_arr = $this->_get_sections_config_arr();
     }
 
+	/**
+	 * Get Sections Config Array
+	 *
+	 * @return array
+	 */
     protected function _get_sections_config_arr()
     {
         return array(
@@ -332,6 +336,9 @@ class LCF_Option_Page
         );
     }
 
+	/**
+	 * Hooks
+	 */
     public function hooks()
     {
         add_action('admin_menu', array($this, 'add_page'));
@@ -343,17 +350,28 @@ class LCF_Option_Page
         }
     }
 
+	/**
+	 * Add Social Script WP Footer
+	 */
     public function add_social_script_wp_footer()
     {
         $social_share_script = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'addthis_script');
         echo $social_share_script;
     }
 
+	/**
+	 * Add Page
+	 */
     public function add_page()
     {
         add_submenu_page('edit.php?post_type=gc-sermons', __('Plugin Options', 'lc-func'), __('Plugin Options', 'lc-func'), 'manage_options', 'lc-plugin-option', array($this, 'plugin_option_page_view'));
     }
 
+	/**
+	 * Plugin Option Page View
+	 *
+	 * @throws Exception
+	 */
     public function plugin_option_page_view()
     {
         $this->enqueu_css();
@@ -368,6 +386,9 @@ class LCF_Option_Page
         echo $view;
     }
 
+	/**
+	 * Enqueue CSS
+	 */
     public function enqueu_css()
     {
         $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
@@ -387,6 +408,9 @@ class LCF_Option_Page
         );
     }
 
+	/**
+	 * Enqueue JS
+	 */
     public function enqueu_js()
     {
         $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
@@ -410,12 +434,18 @@ class LCF_Option_Page
         ));
     }
 
+	/**
+	 * Plugin Settings
+	 */
     public function plugin_settings()
     {
         register_setting($this->plugin_option_key, $this->plugin_option_key, array($this, 'plugin_options_validate'));
         $this->add_settings_sections();
     }
 
+	/**
+	 * Add Settings Sections
+	 */
     protected function add_settings_sections()
     {
         foreach ($this->sections_config_arr as $key => $val) {
@@ -424,6 +454,12 @@ class LCF_Option_Page
         }
     }
 
+	/**
+	 * Add Settings Fields
+	 *
+	 * @param $sec_key
+	 * @param $sectn_det
+	 */
     protected function add_settings_fields($sec_key, $sectn_det)
     {
         if (!empty($sectn_det['fields'])) {
@@ -433,6 +469,13 @@ class LCF_Option_Page
         }
     }
 
+	/**
+	 * Plugin Options Validate
+	 *
+	 * @param $input
+	 *
+	 * @return mixed|void
+	 */
     public function plugin_options_validate($input)
     {
         $prev_val = get_option($this->plugin_option_key);
@@ -526,11 +569,23 @@ class LCF_Option_Page
         return $prev_val;
     }
 
+	/**
+	 * Plugin Section Text
+	 *
+	 * @param $arg
+	 */
     public function plugin_section_text($arg)
     {
         echo empty($this->sections_config_arr[$arg['id']]['desc']) ? '<hr />' : '<hr /><p>' . $this->sections_config_arr[$arg['id']]['desc'] . '</p>';
     }
 
+	/**
+	 * Plugin Form Fields
+	 *
+	 * @param $arg
+	 *
+	 * @return bool|void
+	 */
     public function plugin_form_fields($arg)
     {
         $options = get_option($this->plugin_option_key);
@@ -550,6 +605,12 @@ class LCF_Option_Page
         return $element;
     }
 
+	/**
+	 * Get Form Textarea Element
+	 *
+	 * @param $arg
+	 * @param $db_val
+	 */
     protected function _get_form_textarea_element($arg, $db_val) {
         $default = empty($arg['default']) ? '' : $arg['default'];
         $saved_db_val = !empty($db_val[$arg['key']][$arg['name']]) ? $db_val[$arg['key']][$arg['name']] : $default;
@@ -560,6 +621,12 @@ class LCF_Option_Page
         $this->_get_errors($id);
     }
 
+	/**
+	 * Get Form Text Element
+	 *
+	 * @param $arg
+	 * @param $db_val
+	 */
     protected function _get_form_text_element($arg, $db_val) {
         $saved_db_val = !empty($db_val[$arg['key']][$arg['name']]) ? $db_val[$arg['key']][$arg['name']] : '';
         $id = $arg['key'] . '_' . $arg['name'];
@@ -568,6 +635,12 @@ class LCF_Option_Page
         $this->_get_errors($id);
     }
 
+	/**
+	 * Get Form Select Element
+	 *
+	 * @param $arg
+	 * @param $db_val
+	 */
     protected function _get_form_select_element($arg, $db_val)
     {
         $saved_db_val = !empty($db_val[$arg['key']][$arg['name']]) ? $db_val[$arg['key']][$arg['name']] : '';
@@ -582,6 +655,11 @@ class LCF_Option_Page
         $this->_get_errors($id);
     }
 
+	/**
+	 * Get Errors
+	 *
+	 * @param $id
+	 */
     protected function _get_errors($id)
     {
         $error = get_settings_errors($id);
@@ -594,6 +672,12 @@ class LCF_Option_Page
         }
     }
 
+	/**
+	 * Get Form Checkbox Element
+	 *
+	 * @param $arg
+	 * @param $db_val
+	 */
     protected function _get_form_checkbox_element($arg, $db_val)
     {
         $saved_db_val = !empty($db_val[$arg['key']][$arg['name']]) ? $db_val[$arg['key']][$arg['name']] : array();

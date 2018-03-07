@@ -24,7 +24,6 @@ class LCF_Config_Page
     /**
      * Constructor
      *
-     * @since  scripterz-mods
      * @param  object $plugin Main plugin object.
      * @return void
      */
@@ -34,6 +33,9 @@ class LCF_Config_Page
         $this->ajax_call = defined('DOING_AJAX') && DOING_AJAX;
     }
 
+	/**
+	 * Hooks
+	 */
     public function hooks()
     {
         add_action('admin_menu', array($this, 'add_page'));
@@ -44,11 +46,19 @@ class LCF_Config_Page
         }
     }
 
+	/**
+	 * Add Page
+	 */
     public function add_page()
     {
         add_submenu_page('edit.php?post_type=gc-sermons', __('Messages Config', 'lc-func'), __('Messages Config', 'lc-func'), 'manage_options', 'sermon-message-config', array($this, 'config_page_view'));
     }
 
+	/**
+	 * Config Page View
+	 *
+	 * @throws Exception
+	 */
     public function config_page_view()
     {
         $items = $this->get_all_sermon_messages_ord_by_series();
@@ -62,6 +72,12 @@ class LCF_Config_Page
         echo $view;
     }
 
+	/**
+	 * Get all messages ordered by series
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
     public function get_all_sermon_messages_ord_by_series()
     {
         $custom_terms = get_terms('gc-sermon-series');
@@ -82,6 +98,14 @@ class LCF_Config_Page
         return $items;
     }
 
+	/**
+	 * Get Message by Series
+	 *
+	 * @param $term
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
     public function get_message_by_series($term)
     {
         $item = '';
@@ -115,6 +139,10 @@ class LCF_Config_Page
         return $item;
     }
 
+	/**
+	 * Enqueue JS
+	 *
+	 */
     public function enqueu_js()
     {
         $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
@@ -141,6 +169,9 @@ class LCF_Config_Page
         ));
     }
 
+	/**
+	 * Enqueue CSS
+	 */
     public function enqueu_css()
     {
         $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
@@ -153,6 +184,9 @@ class LCF_Config_Page
         );
     }
 
+	/**
+	 * Sermon Mesage Config Single Series Update Callback
+	 */
     public function sermon_message_config_single_series_update_callback()
     {
         $reponse = array();
@@ -174,6 +208,9 @@ class LCF_Config_Page
         die();
     }
 
+	/**
+	 * Sermon Message Config All Series Update Callback
+	 */
     public function sermon_message_config_all_series_update_callback()
     {
         $reponse = array();

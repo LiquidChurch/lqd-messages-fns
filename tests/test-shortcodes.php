@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class LCF_Shortcodes_Test
+ */
 class LCF_Shortcodes_Test extends WP_UnitTestCase {
 
 	function test_sample() {
@@ -12,6 +15,6 @@ class LCF_Shortcodes_Test extends WP_UnitTestCase {
 	}
 
 	function test_class_access() {
-		$this->assertTrue( lc_func()->shortcodes instanceof LCF_Shortcodes );
+		$this->assertInstanceOf( LCF_Shortcodes::class, lc_func()->shortcodes );
 	}
 }

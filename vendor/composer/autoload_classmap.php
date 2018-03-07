@@ -10,9 +10,9 @@ return array(
     'LCF_Metaboxes' => $baseDir . '/includes/class-metaboxes.php',
     'LCF_Option_Page' => $baseDir . '/includes/pages/class-option-page.php',
     'LCF_Shortcodes' => $baseDir . '/includes/class-shortcodes.php',
-    'LCF_Shortcodes_Resources' => $baseDir . '/includes/shortcodes/resources/class-shortcodes-resources.php',
-    'LCF_Shortcodes_Resources_Admin' => $baseDir . '/includes/shortcodes/resources/class-shortcodes-resources-admin.php',
-    'LCF_Shortcodes_Resources_Run' => $baseDir . '/includes/shortcodes/resources/class-shortcodes-resources-run.php',
+    'LCF_Shortcodes_Resources' => $baseDir . '/includes/class-shortcodes-resources.php',
+    'LCF_Shortcodes_Resources_Admin' => $baseDir . '/includes/class-shortcodes-resources-admin.php',
+    'LCF_Shortcodes_Resources_Run' => $baseDir . '/includes/class-shortcodes-resources-run.php',
     'LCF_Template_Loader' => $baseDir . '/includes/class-template-loader.php',
     'LiquidChurch_Functionality' => $baseDir . '/liquidchurch-functionality.php',
 );

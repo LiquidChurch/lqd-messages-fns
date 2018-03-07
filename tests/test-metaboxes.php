@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class LCF_Metaboxes_Test
+ */
 class LCF_Metaboxes_Test extends WP_UnitTestCase {
 
 	function test_sample() {
@@ -12,6 +15,6 @@ class LCF_Metaboxes_Test extends WP_UnitTestCase {
 	}
 
 	function test_class_access() {
-		$this->assertTrue( lc_func()->metaboxes instanceof LCF_Metaboxes );
+		$this->assertInstanceOf( LCF_Metaboxes::class, lc_func()->metaboxes );
 	}
 }

@@ -2,7 +2,6 @@
 /**
  * LiquidChurch Functionality Shortcodes Resources Admin
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 

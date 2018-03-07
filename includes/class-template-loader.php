@@ -2,7 +2,6 @@
 /**
  * LiquidChurch Functionality Template Loader
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 
@@ -16,9 +15,9 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	/**
 	 * HTML view template loader constructor.
 	 *
-	 * @param string  $template The template file name, relative to the includes/templates/ folder - with or without .php extension
-	 * @param string  $name     The name of the specialised template. If array, will take the place of the $args.
-	 * @param array   $args     An array of arguments to extract as variables into the template
+	 * @param string $template The template file name, relative to the includes/templates/ folder - with or without .php extension
+	 * @param string $name The name of the specialised template. If array, will take the place of the $args.
+	 * @param array $args An array of arguments to extract as variables into the template
 	 *
 	 * @throws Exception
 	 * @return void
@@ -33,7 +32,7 @@ class LCF_Template_Loader extends GCS_Template_Loader {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array  $locations Modified array of locations.
+	 * @param array $locations Modified array of locations.
 	 *
 	 * @return array
 	 */

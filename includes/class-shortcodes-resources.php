@@ -2,14 +2,11 @@
 /**
  * LiquidChurch Functionality Shortcodes Resources
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 
 /**
  * LiquidChurch Functionality Shortcodes Resources.
- *
- * @since NEXT
  */
 class LCF_Shortcodes_Resources {
 

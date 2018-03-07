@@ -9,7 +9,6 @@
 /**
  * LiquidChurch Functionality Metaboxes.
  *
- * @since NEXT
  */
 class LCF_Metaboxes
 {
@@ -17,7 +16,6 @@ class LCF_Metaboxes
 	 * Additional Resources CMB2 id.
 	 *
 	 * @var   string
-	 * @since NEXT
 	 */
 	public $resources_box_id = '';
 
@@ -32,7 +30,6 @@ class LCF_Metaboxes
 	 * Additional Resources meta id.
 	 *
 	 * @var   string
-	 * @since NEXT
 	 */
 	public $resources_meta_id = '';
 
@@ -54,7 +51,6 @@ class LCF_Metaboxes
 	/**
 	 * Constructor
 	 *
-	 * @since  NEXT
 	 * @param  object $plugin Main plugin object.
 	 * @return void
 	 */
@@ -65,7 +61,6 @@ class LCF_Metaboxes
 	/**
 	 * Initiate our hooks
 	 *
-	 * @since  NEXT
 	 * @return void
 	 */
 	public function hooks() {
@@ -80,6 +75,11 @@ class LCF_Metaboxes
 		add_action( 'cmb2_render_text_number', array( $this, 'meta_addtnl_type_text_number' ), 10, 5 );
 	}
 
+	/**
+	 * Add Metabox
+	 *
+	 * @param $metabox
+	 */
 	public function add_metabox( $metabox ) {
 
 		//display order field for messages
@@ -204,6 +204,11 @@ class LCF_Metaboxes
 
 	}
 
+	/**
+	 * Get Display Name Field Option
+	 *
+	 * @return array
+	 */
     public static function get_disp_name_fld_option()
     {
         $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('addtnl_rsrc_option', 'display_name_fld_val');
@@ -219,6 +224,11 @@ class LCF_Metaboxes
         }
     }
 
+	/**
+	 * Get Language Field Option
+	 *
+	 * @return array
+	 */
     public static function get_lng_fld_option()
     {
         $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('addtnl_rsrc_option', 'addtnl_rsrc_lng_optn');
@@ -238,6 +248,11 @@ class LCF_Metaboxes
         }
     }
 
+	/**
+	 * Enqueue Box JS
+	 *
+	 * @param $args
+	 */
 	public function enqueu_box_js( $args ) {
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 

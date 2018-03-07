@@ -2,14 +2,11 @@
 /**
  * LiquidChurch Functionality Shortcodes
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 
 /**
  * LiquidChurch Functionality Shortcodes.
- *
- * @since NEXT
  */
 class LCF_Shortcodes {
 
@@ -23,7 +20,6 @@ class LCF_Shortcodes {
 	/**
 	 * Constructor
 	 *
-	 * @since  NEXT
 	 * @param  object $plugin Main plugin object.
 	 * @return void
 	 */

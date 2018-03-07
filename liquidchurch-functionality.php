@@ -40,7 +40,7 @@
     /**
      * Autoloads files with classes when needed
      *
-     * @since  NEXT
+     * @since  0.1.0
      * @param  string $class_name Name of the class being requested.
      * @return void
      */
@@ -73,7 +73,7 @@
     /**
      * Main initiation class
      *
-     * @since  NEXT
+     * @since  0.1.0
      */
     final class LiquidChurch_Functionality
     {
@@ -82,76 +82,63 @@
          * Current version
          *
          * @var  string
-         * @since  NEXT
          */
         const VERSION = '0.5.1';
         /**
          * Plugin options settings key
-         *
-         * @since scripterz-mods
          */
         public static $plugin_option_key = 'lc-plugin-settings';
         /**
          * Singleton instance of plugin
          *
          * @var LiquidChurch_Functionality
-         * @since  NEXT
          */
         protected static $single_instance = null;
         /**
          * URL of plugin directory
          *
          * @var string
-         * @since  NEXT
          */
         protected $url = '';
         /**
          * Path of plugin directory
          *
          * @var string
-         * @since  NEXT
          */
         protected $path = '';
         /**
          * Plugin basename
          *
          * @var string
-         * @since  NEXT
          */
         protected $basename = '';
         /**
          * Instance of LCF_Metaboxes
          *
-         * @since NEXT
          * @var LCF_Metaboxes
          */
         protected $metaboxes;
         /**
          * Instance of LCF_Shortcodes
          *
-         * @since NEXT
          * @var LCF_Shortcodes
          */
         protected $shortcodes;
         /**
          * Instance of LCF_Config_Page
          *
-         * @since scripterz-mods
          * @var LCF_Config_Page
          */
         protected $config_page;
         /**
          * Instance of LCF_Option_Page
          *
-         * @since scripterz-mods
          * @var LCF_Option_Page
          */
         protected $option_page;
         
         /**
          * Sets up our plugin
-         *
-         * @since  NEXT
          */
         protected function __construct()
         {
@@ -163,7 +150,6 @@
         /**
          * Creates or returns an instance of this class.
          *
-         * @since  NEXT
          * @return LiquidChurch_Functionality A single instance of this class.
          */
         public static function get_instance()
@@ -175,10 +161,9 @@
             return self::$single_instance;
         }
         
-                /**
+        /**
          * Include a file from the includes directory
          *
-         * @since  NEXT
          * @param  string $filename Name of the file to be included.
          * @return bool   Result of include call.
          */
@@ -195,7 +180,6 @@
         /**
          * This plugin's directory
          *
-         * @since  NEXT
          * @param  string $path (optional) appended path.
          * @return string       Directory and path
          */
@@ -210,7 +194,6 @@
         /**
          * This plugin's url
          *
-         * @since  NEXT
          * @param  string $path (optional) appended path.
          * @return string       URL and path
          */
@@ -221,7 +204,15 @@
             
             return $url . $path;
         }
-        
+
+	    /**
+	     * Get Plugin Settings Options
+	     *
+	     * @param string $arg
+	     * @param string $sub_arg
+	     *
+	     * @return bool|mixed|void
+	     */
         public static function get_plugin_settings_options($arg = '', $sub_arg = '')
         {
             $options = get_option(self::$plugin_option_key);
@@ -251,7 +242,6 @@
         /**
          * Add hooks and filters
          *
-         * @since  NEXT
          * @return void
          */
         public function hooks()
@@ -262,7 +252,6 @@
         /**
          * Activate the plugin
          *
-         * @since  NEXT
          * @return void
          */
         public function _activate()
@@ -275,7 +264,6 @@
          * Deactivate the plugin
          * Uninstall routines should be in uninstall.php
          *
-         * @since  NEXT
          * @return void
          */
         public function _deactivate() { }
@@ -283,7 +271,6 @@
         /**
          * Init hooks
          *
-         * @since  NEXT
          * @return void
          */
         public function init()
@@ -298,7 +285,6 @@
          * Check if the plugin meets requirements and
          * disable it if they are not present.
          *
-         * @since  NEXT
          * @return boolean result of meets_requirements
          */
         public function check_requirements()
@@ -320,7 +306,6 @@
         /**
          * Check that all plugin requirements are met
          *
-         * @since  NEXT
          * @return boolean True if requirements are met.
          */
         public static function meets_requirements()
@@ -331,10 +316,9 @@
             return class_exists('GC_Sermons_Plugin');
         }
         
-/**
+		/**
          * Attach other plugin classes to the base plugin class.
          *
-         * @since  NEXT
          * @return void
          */
         public function plugin_classes()
@@ -367,7 +351,6 @@
         /**
          * Deactivates this plugin, hook this function on admin_init.
          *
-         * @since  NEXT
          * @return void
          */
         public function deactivate_me()
@@ -378,7 +361,6 @@
         /**
          * Adds a notice to the dashboard if the plugin requirements are not met
          *
-         * @since  NEXT
          * @return void
          */
         public function requirements_not_met_notice()
@@ -394,7 +376,6 @@
         /**
          * Magic getter for our object.
          *
-         * @since  NEXT
          * @param string $field Field to get.
          * @throws Exception Throws an exception if the field is invalid.
          * @return mixed
@@ -421,7 +402,6 @@
      * Grab the LiquidChurch_Functionality object and return it.
      * Wrapper for LiquidChurch_Functionality::get_instance()
      *
-     * @since  NEXT
      * @return LiquidChurch_Functionality  Singleton instance of plugin class.
      */
     function lc_func()

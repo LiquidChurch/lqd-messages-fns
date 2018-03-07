@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class LCF_Shortcodes_Resources_Admin_Test
+ */
 class LCF_Shortcodes_Resources_Admin_Test extends WP_UnitTestCase {
 
 	function test_sample() {
