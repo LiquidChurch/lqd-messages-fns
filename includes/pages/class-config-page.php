@@ -185,7 +185,7 @@ class LCF_Config_Page
     }
 
 	/**
-	 * Sermon Mesage Config Single Series Update Callback
+	 * Sermon Message Config Single Series Update Callback
 	 */
     public function sermon_message_config_single_series_update_callback()
     {

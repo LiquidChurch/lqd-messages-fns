@@ -30,7 +30,7 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 		'resource_file_type'     => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other', ), // Only applies if 'type' is 'file',
 		'resource_display_name'  => false, // Uses Resource Name by default
 		'resource_post_id'       => 0, // Uses `get_the_id()` by default
-		'resource_extra_classes' => '', // For cusotm styling
+		'resource_extra_classes' => '', // For custom styling
         'resource_lang' => array(), // For resource language
 	);
 

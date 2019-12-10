@@ -128,7 +128,7 @@ window.LiquidChurchAdmin = window.LiquidChurchAdmin || {};
 
 
     /**
-     * binding valiation classes to input
+     * binding validation classes to input
      * after keyup event
      */
     $sermon_message_config_page_wrap.find('input[type="number"][required]').each(function (i, v) {

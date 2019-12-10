@@ -5,7 +5,7 @@
      * @since   NEXT
      * @package LiquidChurch Functionality
      */
-    
+
     /**
      * LiquidChurch Functionality Shortcodes Resources Admin.
      *
@@ -20,25 +20,25 @@
          * @since 0.1.0
          */
         protected $run;
-        
-        /**
-         * Constructor
-         *
-         * @since  0.1.0
-         * @param  object $run LCF_Shortcodes_Resources_Run object.
-         * @return void
-         */
+
+	    /**
+	     * Constructor
+	     *
+	     * @param LCF_Shortcodes_Resources_Run $run LCF_Shortcodes_Resources_Run object.
+	     *
+	     * @since  0.1.0
+	     */
         public function __construct(LCF_Shortcodes_Resources_Run $run)
         {
             $this->run = $run;
-            
+
             parent::__construct(
                 $this->run->shortcode,
                 LiquidChurch_Functionality::VERSION,
                 $this->run->atts_defaults
             );
         }
-        
+
         /**
          * Sets up the button
          *
@@ -53,7 +53,7 @@
                 // 'mceView'        => true, // The future
             );
         }
-        
+
         /**
          * Adds fields to the button modal using CMB2
          *
@@ -75,7 +75,7 @@
                     'urls'  => __('URLs', 'lc-func'),
                 ),
             );
-            
+
             $fields[] = array(
                 'name'    => __('File Type', 'lc-func'),
                 'desc'    => __('Only applies if checking "Files" as the Resource Type.',
@@ -92,21 +92,21 @@
                     'other' => __('Other', 'lc-func'),
                 ),
             );
-            
+
             $fields[] = array(
                 'name' => __('Use the Display Name', 'lc-func'),
                 'desc' => __('By default, the Resource Name will be used.', 'lc-func'),
                 'id'   => 'resource_display_name',
                 'type' => 'checkbox',
             );
-            
+
             /*$fields[] = array(
                 'name' => __( 'Sermon ID', 'lc-func' ),
                 'desc' => __( 'By default, will use the current ID.', 'lc-func' ),
                 'id'   => 'resource_post_id',
                 'type' => 'text_small',
             );*/
-            
+
             $fields[] = array(
                 'name'            => __('Sermon ID', 'lc-func'),
                 'desc'            => __('If nothing is selected, it will use <code>get_the_id()</code>',
@@ -117,14 +117,14 @@
                 'select_type'     => 'radio',
                 'select_behavior' => 'replace',
             );
-            
+
             $fields[] = array(
                 'name' => __('Extra CSS Classes', 'lc-func'),
                 'desc' => __('Enter classes separated by spaces (e.g. "class1 class2")', 'lc-func'),
                 'type' => 'text',
                 'id'   => 'resource_extra_classes',
             );
-            
+
             $fields[] = array(
                 'name'    => __('Resource Language', 'lc-func'),
                 'desc'    => __('Please select the resource language', 'lc-func'),
@@ -133,7 +133,7 @@
                 'default' => '',
                 'options' => LCF_Metaboxes::get_lng_fld_option(),
             );
-            
+
             return $fields;
         }
     }
