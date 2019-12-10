@@ -1,6 +1,6 @@
 <?php
 /**
- * LiquidChurch Functionality Shortcodes
+ * LiquidChurch Functionality Shortcodes Class
  *
  * @package LiquidChurch Functionality
  */

@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Class GCS_Config_Page_Base
+ * Class LCF_Config_Page
+ *
+ * TODO: May extend GCS_Config_Page_Base?
  *
  * @package LiquidChurch Functionality
  */

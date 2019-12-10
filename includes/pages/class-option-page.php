@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Class GCS_Config_Page_Base
+ * Class LCF_Option_Page
+ *
+ * TODO: Possible extends GCS_Config_Page_Base?
  *
  * @package LiquidChurch Functionality
  */
@@ -296,43 +298,6 @@ class LCF_Option_Page
                     )
                 )
             ),
-            /*'plugin_option_names' => array(
-                'title' => __('Plugin Options Names', 'lc-func'),
-                'page' => 'plugin_option_names',
-                'desc' => __('', 'lc-func'),
-                'fields' => array(
-                    array(
-                        'title' => __('Message Title', 'lc-func'),
-                        'name' => 'message_title',
-                        'type' => 'text'
-                    ),
-                    array(
-                        'title' => __('Messages Title', 'lc-func'),
-                        'name' => 'messages_title',
-                        'type' => 'text'
-                    ),
-                    array(
-                        'title' => __('Series Title', 'lc-func'),
-                        'name' => 'series_title',
-                        'type' => 'text'
-                    ),
-                    array(
-                        'title' => __('Speaker Title', 'lc-func'),
-                        'name' => 'speaker_title',
-                        'type' => 'text'
-                    ),
-                    array(
-                        'title' => __('Topic Title', 'lc-func'),
-                        'name' => 'topic_title',
-                        'type' => 'text'
-                    ),
-                    array(
-                        'title' => __('Scripture Reference Title', 'lc-func'),
-                        'name' => 'scripture_reference_title',
-                        'type' => 'text'
-                    ),
-                )
-            ),*/
         );
     }
 
@@ -464,7 +429,14 @@ class LCF_Option_Page
     {
         if (!empty($sectn_det['fields'])) {
             foreach ($sectn_det['fields'] as $key => $val) {
-                add_settings_field($sec_key . '_' . $val['name'], $val['title'], array($this, 'plugin_form_fields'), $sectn_det['page'], $sec_key, array_merge(array('key' => $sec_key), $val));
+                add_settings_field(
+                	$sec_key . '_' . $val['name'],
+	                $val['title'],
+	                array($this, 'plugin_form_fields'),
+	                $sectn_det['page'],
+	                $sec_key,
+	                array_merge(array('key' => $sec_key), $val)
+                );
             }
         }
     }

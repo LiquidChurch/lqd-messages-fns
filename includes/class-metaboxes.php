@@ -2,12 +2,11 @@
 /**
  * LiquidChurch Functionality Metaboxes
  *
- * @since NEXT
  * @package LiquidChurch Functionality
  */
 
 /**
- * LiquidChurch Functionality Metaboxes.
+ * LiquidChurch Functionality Metaboxes Class
  *
  */
 class LCF_Metaboxes
@@ -64,13 +63,6 @@ class LCF_Metaboxes
 	 * @return void
 	 */
 	public function hooks() {
-		// add_filter( 'gcs_taxonomies_series', array( $this, 'series_tax_override' ) );
-		// add_filter( 'gcs_taxonomies_speaker', array( $this, 'speaker_tax_override' ) );
-		// add_filter( 'gcs_taxonomies_tag', array( $this, 'tag_tax_override' ) );
-		// add_filter( 'gcs_taxonomies_topic', array( $this, 'topic_tax_override' ) );
-		// add_filter( 'gcst_taxonomies_position', array( $this, 'position_tax_override' ) );
-		// add_filter( 'gcs_post_types_sermon', array( $this, 'sermon_override' ) );
-		// add_filter( 'gcst_post_types_staff', array( $this, 'staff_override' ) );
 		add_action( 'cmb2_admin_init', array( $this, 'add_metabox' ), 99 );
 		add_action( 'cmb2_render_text_number', array( $this, 'meta_addtnl_type_text_number' ), 10, 5 );
 	}

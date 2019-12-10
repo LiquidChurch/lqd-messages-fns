@@ -1,6 +1,5 @@
 /**
  * LiquidChurch Functionality
- * http://www.liquidchurch.com/
  *
  * Licensed under the GPLv2+ license.
  */

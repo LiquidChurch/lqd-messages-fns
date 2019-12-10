@@ -126,10 +126,7 @@ module.exports = function (grunt) {
                     '!node_modules/**',
                     '!**/*.md',
                     '!.travis.yml',
-                    '!.bowerrc',
                     '!.gitignore',
-                    '!bower.json',
-                    '!Dockunit.json',
                     '!Gruntfile.js',
                     '!package.json',
                     '!phpunit.xml'

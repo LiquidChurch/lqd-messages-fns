@@ -4,21 +4,19 @@
      * Plugin URI:  http://www.liquidchurch.com/
      * Description: Adds custom functionality for use on http://www.liquidchurch.com
      * Version:     0.5.1
-     * Author:      Justin Sternberg, Suraj Gupta
-     * Author URI:  http://www.liquidchurch.com/
-     * Donate link: http://www.liquidchurch.com/
+     * Author:      Justin Sternberg, Suraj Gupta, Dave Mackey, Liquid Church
+     * Author URI:  https://liquidchurch.com/
+     * Donate link: https://liquidchurch.com/
      * License:     GPLv2
      * Text Domain: lc-func
      * Domain Path: /languages
      *
-     * @link    http://www.liquidchurch.com/
-     *
      * @package LiquidChurch Functionality
      * @version 0.5.1
      */
-    
+
     /**
-     * Copyright (c) 2016-2017 Liquid Church
+     * Copyright (c) 2016-2019 Liquid Church
      * Copyright (c) 2016 Justin Sternberg (email : justin@dsgnwrks.pro)
      * Copyright (c) 2016-2017 Suraj Gupta (email : suraj.gupta@scripterz.in)
      *
@@ -36,7 +34,7 @@
      * along with this program; if not, write to the Free Software
      * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
      */
-    
+
     /**
      * Autoloads files with classes when needed
      *
@@ -49,16 +47,16 @@
         if (0 !== strpos($class_name, 'LCF_')) {
             return;
         }
-        
+
         $filename = strtolower(str_replace(
             '_', '-',
             substr($class_name, strlen('LCF_'))
         ));
-        
+
         $include_sub_dir = array(
             'pages'
         );
-        
+
         $status = LiquidChurch_Functionality::include_file('includes/class-' . $filename);
         if ($status === false) {
             foreach ($include_sub_dir as $k => $v) {
@@ -67,9 +65,9 @@
             }
         }
     }
-    
+
     spl_autoload_register('lc_func_autoload_classes');
-    
+
     /**
      * Main initiation class
      *
@@ -77,66 +75,75 @@
      */
     final class LiquidChurch_Functionality
     {
-        
+
         /**
          * Current version
          *
          * @var  string
          */
         const VERSION = '0.5.1';
+
         /**
          * Plugin options settings key
          */
         public static $plugin_option_key = 'lc-plugin-settings';
+
         /**
          * Singleton instance of plugin
          *
          * @var LiquidChurch_Functionality
          */
         protected static $single_instance = null;
+
         /**
          * URL of plugin directory
          *
          * @var string
          */
         protected $url = '';
+
         /**
          * Path of plugin directory
          *
          * @var string
          */
         protected $path = '';
+
         /**
          * Plugin basename
          *
          * @var string
          */
         protected $basename = '';
+
         /**
          * Instance of LCF_Metaboxes
          *
          * @var LCF_Metaboxes
          */
         protected $metaboxes;
+
         /**
          * Instance of LCF_Shortcodes
          *
          * @var LCF_Shortcodes
          */
         protected $shortcodes;
+
         /**
          * Instance of LCF_Config_Page
          *
          * @var LCF_Config_Page
          */
         protected $config_page;
+
         /**
          * Instance of LCF_Option_Page
          *
          * @var LCF_Option_Page
          */
         protected $option_page;
-        
+
         /**
          * Sets up our plugin
          */
@@ -146,7 +153,7 @@
             $this->url = plugin_dir_url(__FILE__);
             $this->path = plugin_dir_path(__FILE__);
         }
-        
+
         /**
          * Creates or returns an instance of this class.
          *
@@ -157,10 +164,10 @@
             if (null === self::$single_instance) {
                 self::$single_instance = new self();
             }
-            
+
             return self::$single_instance;
         }
-        
+
         /**
          * Include a file from the includes directory
          *
@@ -173,10 +180,10 @@
             if (file_exists($file)) {
                 return include_once($file);
             }
-            
+
             return false;
         } // END OF PLUGIN CLASSES FUNCTION
-        
+
         /**
          * This plugin's directory
          *
@@ -187,10 +194,10 @@
         {
             static $dir;
             $dir = $dir ? $dir : trailingslashit(dirname(__FILE__));
-            
+
             return $dir . $path;
         }
-        
+
         /**
          * This plugin's url
          *
@@ -201,7 +208,7 @@
         {
             static $url;
             $url = $url ? $url : trailingslashit(plugin_dir_url(__FILE__));
-            
+
             return $url . $path;
         }
 
@@ -219,26 +226,26 @@
             if (empty($options)) {
                 return false;
             }
-            
+
             if (!empty($arg)) {
                 if (!isset($options[$arg])) {
                     return false;
                 }
-                
+
                 if (!empty($sub_arg)) {
                     if (!isset($options[$arg][$sub_arg])) {
                         return false;
                     }
-                    
+
                     return $options[$arg][$sub_arg];
                 }
-                
+
                 return $options[$arg];
             }
-            
+
             return $options;
         }
-        
+
         /**
          * Add hooks and filters
          *
@@ -248,7 +255,7 @@
         {
             add_action('init', array($this, 'init'));
         }
-        
+
         /**
          * Activate the plugin
          *
@@ -259,7 +266,7 @@
             // Make sure any rewrite functionality has been loaded.
             flush_rewrite_rules();
         }
-        
+
         /**
          * Deactivate the plugin
          * Uninstall routines should be in uninstall.php
@@ -267,7 +274,7 @@
          * @return void
          */
         public function _deactivate() { }
-        
+
         /**
          * Init hooks
          *
@@ -280,7 +287,7 @@
                 $this->plugin_classes();
             }
         }
-        
+
         /**
          * Check if the plugin meets requirements and
          * disable it if they are not present.
@@ -290,19 +297,19 @@
         public function check_requirements()
         {
             if (!$this->meets_requirements()) {
-                
+
                 // Add a dashboard notice.
                 add_action('all_admin_notices', array($this, 'requirements_not_met_notice'));
-                
+
                 // Deactivate our plugin.
                 add_action('admin_init', array($this, 'deactivate_me'));
-                
+
                 return false;
             }
-            
+
             return true;
         }
-        
+
         /**
          * Check that all plugin requirements are met
          *
@@ -315,7 +322,7 @@
             // We have met all requirements.
             return class_exists('GC_Sermons_Plugin');
         }
-        
+
 		/**
          * Attach other plugin classes to the base plugin class.
          *
@@ -330,7 +337,7 @@
             } else {
                 $this->metaboxes = (object)array();
             }
-            
+
             // Set these properties either way.
             $this->metaboxes->resources_box_id = 'gc_addtl_resources_metabox';
             $this->metaboxes->resources_meta_id = 'gc_addtl_resources';
@@ -338,16 +345,16 @@
             $this->metaboxes->display_ordr_meta_id = 'gc_display_order';
             $this->metaboxes->exclude_msg_meta_id = 'gc_exclude_msg';
             $this->metaboxes->video_msg_appear_pos = 'gc_video_msg_pos';
-            
+
             $this->shortcodes = new LCF_Shortcodes($this);
-            
+
             $this->config_page = new LCF_Config_Page($this);
             $this->config_page->hooks();
-            
+
             $this->option_page = new LCF_Option_Page($this);
             $this->option_page->hooks();
         }
-        
+
         /**
          * Deactivates this plugin, hook this function on admin_init.
          *
@@ -357,7 +364,7 @@
         {
             deactivate_plugins($this->basename);
         }
-        
+
         /**
          * Adds a notice to the dashboard if the plugin requirements are not met
          *
@@ -368,11 +375,11 @@
             // Output our error.
             echo '<div id="message" class="error">';
             echo '<p>' .
-                 sprintf(__('LiquidChurch Functionality is missing the <a href="https://github.com/jtsternberg/GC-Sermons">GC Sermons plugin</a> and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.',
+                 sprintf(__('LiquidChurch Functionality is missing the <a href="https://github.com/liquidchurch/lqd-messages">Liquid Messages plugin</a> and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.',
                      'lc-func'), admin_url('plugins.php')) . '</p>';
             echo '</div>';
         }
-        
+
         /**
          * Magic getter for our object.
          *
@@ -397,7 +404,7 @@
             }
         }
     }
-    
+
     /**
      * Grab the LiquidChurch_Functionality object and return it.
      * Wrapper for LiquidChurch_Functionality::get_instance()
@@ -408,9 +415,9 @@
     {
         return LiquidChurch_Functionality::get_instance();
     }
-    
+
     // Kick it off.
     add_action('plugins_loaded', array(lc_func(), 'hooks'));
-    
+
     register_activation_hook(__FILE__, array(lc_func(), '_activate'));
     register_deactivation_hook(__FILE__, array(lc_func(), '_deactivate'));
