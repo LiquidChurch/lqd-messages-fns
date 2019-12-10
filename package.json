@@ -28,7 +28,6 @@
 		"gruntify-eslint": "latest"
 	},
 	"scripts": {
-		"test": "dockunit",
 		"preversion": "npm test",
 		"version": "grunt version && git add ."
 	}
