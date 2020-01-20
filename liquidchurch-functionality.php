@@ -8,7 +8,7 @@
      * Author URI:  https://liquidchurch.com/
      * Donate link: https://liquidchurch.com/
      * License:     GPLv2
-     * Text Domain: lc-func
+     * Text Domain: lcf
      * Domain Path: /languages
      *
      * @package LiquidChurch Functionality
@@ -16,13 +16,13 @@
      */
 
     /**
-     * Autoloads files with classes when needed
+     * Autoload files with classes when needed
      *
      * @since  0.1.0
      * @param  string $class_name Name of the class being requested.
      * @return void
      */
-    function lc_func_autoload_classes($class_name)
+    function lcf_autoloader($class_name)
     {
     	// If the $class_name does not begin with LCF_, skip it.
         if (0 !== strpos($class_name, 'LCF_')) {
@@ -47,7 +47,7 @@
         }
     }
 
-    spl_autoload_register('lc_func_autoload_classes');
+    spl_autoload_register( 'lcf_autoloader' );
 
     /**
      * Main initiation class
@@ -165,23 +165,28 @@
         public static function get_plugin_settings_options($arg = '', $sub_arg = '')
         {
             $options = get_option(self::$plugin_option_key);
+            // If the options array is empty
             if (empty($options)) {
                 return false;
             }
 
+            // If the option has no setting
             if (!empty($arg)) {
                 if (!isset($options[$arg])) {
                     return false;
                 }
 
+                // If the sub-setting has no setting
                 if (!empty($sub_arg)) {
                     if (!isset($options[$arg][$sub_arg])) {
                         return false;
                     }
 
+                    // Return the sub-setting
                     return $options[$arg][$sub_arg];
                 }
 
+                // Return the setting
                 return $options[$arg];
             }
 
@@ -217,7 +222,7 @@
         public function init()
         {
             if ($this->check_requirements()) {
-                load_plugin_textdomain('lc-func', false, dirname($this->basename) . '/languages/');
+                load_plugin_textdomain('lcf', false, dirname($this->basename) . '/languages/');
                 $this->plugin_classes();
             }
         }
@@ -310,7 +315,7 @@
             echo '<div id="message" class="error">';
             echo '<p>' .
                  sprintf(__('LiquidChurch Functionality is missing the <a href="https://github.com/liquidchurch/lqd-messages">Liquid Messages plugin</a> and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.',
-                     'lc-func'), admin_url('plugins.php')) . '</p>';
+                     'lcf'), admin_url('plugins.php')) . '</p>';
             echo '</div>';
         }
 

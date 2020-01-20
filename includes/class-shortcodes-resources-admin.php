@@ -38,8 +38,8 @@ class LCF_Shortcodes_Resources_Admin extends WDS_Shortcode_Admin {
 	 */
 	function js_button_data() {
 		return array(
-			'qt_button_text' => __( 'Sermon Resources', 'lc-func' ),
-			'button_tooltip' => __( 'Sermon Resources', 'lc-func' ),
+			'qt_button_text' => __( 'Sermon Resources', 'lcf' ),
+			'button_tooltip' => __( 'Sermon Resources', 'lcf' ),
 			'icon'           => 'dashicons-media-interactive',
 			// 'mceView'        => true, // The future
 		);
@@ -55,50 +55,50 @@ class LCF_Shortcodes_Resources_Admin extends WDS_Shortcode_Admin {
 	 */
 	function fields( $fields, $button_data ) {
 		$fields[] = array(
-			'name'    => __( 'Resource Type', 'lc-func' ),
-			'desc'    => __( 'Select the type of resource to display.', 'lc-func' ),
+			'name'    => __( 'Resource Type', 'lcf' ),
+			'desc'    => __( 'Select the type of resource to display.', 'lcf' ),
 			'id'      => 'resource_type',
 			'type'    => 'multicheck_inline',
 			'default' => $this->atts_defaults['resource_type'],
 			'options' => array(
-				'files' => __( 'Files', 'lc-func' ),
-				'urls'  => __( 'URLs', 'lc-func' ),
+				'files' => __( 'Files', 'lcf' ),
+				'urls'  => __( 'URLs', 'lcf' ),
 			),
 		);
 
 		$fields[] = array(
-			'name'    => __( 'File Type', 'lc-func' ),
-			'desc'    => __( 'Only applies if checking "Files" as the Resource Type.', 'lc-func' ),
+			'name'    => __( 'File Type', 'lcf' ),
+			'desc'    => __( 'Only applies if checking "Files" as the Resource Type.', 'lcf' ),
 			'id'      => 'resource_file_type',
 			'type'    => 'multicheck_inline',
 			'default' => $this->atts_defaults['resource_file_type'],
 			'options' => array(
-				'image' => __( 'Image', 'lc-func' ),
-				'video' => __( 'Video', 'lc-func' ),
-				'audio' => __( 'Audio', 'lc-func' ),
-				'pdf'   => __( 'PDF', 'lc-func' ),
-				'zip'   => __( 'Zip', 'lc-func' ),
-				'other' => __( 'Other', 'lc-func' ),
+				'image' => __( 'Image', 'lcf' ),
+				'video' => __( 'Video', 'lcf' ),
+				'audio' => __( 'Audio', 'lcf' ),
+				'pdf'   => __( 'PDF', 'lcf' ),
+				'zip'   => __( 'Zip', 'lcf' ),
+				'other' => __( 'Other', 'lcf' ),
 			),
 		);
 
 		$fields[] = array(
-			'name' => __( 'Use the Display Name', 'lc-func' ),
-			'desc' => __( 'By default, the Resource Name will be used.', 'lc-func' ),
+			'name' => __( 'Use the Display Name', 'lcf' ),
+			'desc' => __( 'By default, the Resource Name will be used.', 'lcf' ),
 			'id'   => 'resource_display_name',
 			'type' => 'checkbox',
 		);
 
 		 /*$fields[] = array(
-		 	'name' => __( 'Sermon ID', 'lc-func' ),
-		 	'desc' => __( 'By default, will use the current ID.', 'lc-func' ),
+		 	'name' => __( 'Sermon ID', 'lcf' ),
+		 	'desc' => __( 'By default, will use the current ID.', 'lcf' ),
 		 	'id'   => 'resource_post_id',
 		 	'type' => 'text_small',
 		 );*/
 
 		$fields[] = array(
-			'name'            => __( 'Sermon ID', 'lc-func' ),
-			'desc'            => __( 'If nothing is selected, it will use <code>get_the_id()</code>', 'lc-func' ),
+			'name'            => __( 'Sermon ID', 'lcf' ),
+			'desc'            => __( 'If nothing is selected, it will use <code>get_the_id()</code>', 'lcf' ),
 			'id'              => 'resource_post_id',
 			'type'            => 'post_search_text',
 			'post_type'       => gc_sermons()->sermons->post_type(),
@@ -107,15 +107,15 @@ class LCF_Shortcodes_Resources_Admin extends WDS_Shortcode_Admin {
 		);
 
 		$fields[] = array(
-			'name'    => __( 'Extra CSS Classes', 'lc-func' ),
-			'desc'    => __( 'Enter classes separated by spaces (e.g. "class1 class2")', 'lc-func' ),
+			'name'    => __( 'Extra CSS Classes', 'lcf' ),
+			'desc'    => __( 'Enter classes separated by spaces (e.g. "class1 class2")', 'lcf' ),
 			'type'    => 'text',
 			'id'      => 'resource_extra_classes',
 		);
 
 		$fields[] = array(
-			'name'    => __( 'Resource Language', 'lc-func' ),
-			'desc'    => __( 'Please select the resource language', 'lc-func' ),
+			'name'    => __( 'Resource Language', 'lcf' ),
+			'desc'    => __( 'Please select the resource language', 'lcf' ),
 			'type'    => 'multicheck_inline',
 			'id'      => 'resource_lang',
 			'default' => array_keys(LCF_Metaboxes::get_lng_fld_option()),

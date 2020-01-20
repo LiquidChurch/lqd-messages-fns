@@ -39,255 +39,255 @@ class LCF_Option_Page
     {
         return array(
             'series_view' => array(
-                'title' => __('Series List View', 'lc-func'),
+                'title' => __('Series List View', 'lcf'),
                 'page' => 'series_view',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Display the Title of the Series Over the Series Featured Image', 'lc-func'),
+                        'title' => __('Display the Title of the Series Over the Series Featured Image', 'lcf'),
                         'name' => 'title_over_series_featured_img',
                         'type' => 'select',
                         'value' => array(
                             '' => 'Select',
-                            'always_show' => __('Always Show', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            'always_show' => __('Always Show', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('How Do You Want Each Series Image to Look', 'lc-func'),
+                        'title' => __('How Do You Want Each Series Image to Look', 'lcf'),
                         'name' => 'series_img_type',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'no_overlay' => __('No Overlay', 'lc-func'),
-                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lc-func'),
-                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'no_overlay' => __('No Overlay', 'lcf'),
+                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lcf'),
+                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('Fit Entire Year of Series On One Page', 'lc-func'),
+                        'title' => __('Fit Entire Year of Series On One Page', 'lcf'),
                         'name' => 'entire_year_series_one_page',
                         'type' => 'select',
                         'value' => array(
                             '' => 'Select',
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     )
                 )
             ),
             'search_view' => array(
-                'title' => __('Search Results View', 'lc-func'),
+                'title' => __('Search Results View', 'lcf'),
                 'page' => 'search_view',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Display the Title of the Series Over the Series Featured Image', 'lc-func'),
+                        'title' => __('Display the Title of the Series Over the Series Featured Image', 'lcf'),
                         'name' => 'title_over_series_featured_img',
                         'type' => 'select',
                         'value' => array(
                             '' => 'Select',
-                            'always_show' => __('Always Show', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            'always_show' => __('Always Show', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('How Do You Want Each Series Image to Look', 'lc-func'),
+                        'title' => __('How Do You Want Each Series Image to Look', 'lcf'),
                         'name' => 'series_img_type',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'no_overlay' => __('No Overlay', 'lc-func'),
-                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lc-func'),
-                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'no_overlay' => __('No Overlay', 'lcf'),
+                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lcf'),
+                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('Display the Title of the Message Over the Message Featured Image', 'lc-func'),
+                        'title' => __('Display the Title of the Message Over the Message Featured Image', 'lcf'),
                         'name' => 'title_over_message_featured_img',
                         'type' => 'select',
                         'value' => array(
                             '' => 'Select',
-                            'always_show' => __('Always Show', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            'always_show' => __('Always Show', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('How Do You Want Each Message Feature Image to Look', 'lc-func'),
+                        'title' => __('How Do You Want Each Message Feature Image to Look', 'lcf'),
                         'name' => 'message_img_type',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'no_overlay' => __('No Overlay', 'lc-func'),
-                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lc-func'),
-                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'no_overlay' => __('No Overlay', 'lcf'),
+                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lcf'),
+                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lcf')
                         )
                     )
                 )
             ),
             'single_series_view' => array(
-                'title' => __('Individual Series View', 'lc-func'),
+                'title' => __('Individual Series View', 'lcf'),
                 'page' => 'single_series_view',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Series Fields to Display on Front End', 'lc-func'),
+                        'title' => __('Series Fields to Display on Front End', 'lcf'),
                         'name' => 'series_field_to_display',
                         'type' => 'checkbox',
                         'value' => array(
-                            'series_image' => __('Series Image', 'lc-func'),
-                            'title' => __('Title', 'lc-func'),
-                            'description' => __('Description', 'lc-func'),
+                            'series_image' => __('Series Image', 'lcf'),
+                            'title' => __('Title', 'lcf'),
+                            'description' => __('Description', 'lcf'),
                         )
                     ),
                     array(
-                        'title' => __('Message Fields to Display on Front End', 'lc-func'),
+                        'title' => __('Message Fields to Display on Front End', 'lcf'),
                         'name' => 'message_field_to_display',
                         'type' => 'checkbox',
                         'value' => array(
-                            'sermon_image' => __('Sermon Image', 'lc-func'),
-                            'title' => __('Title', 'lc-func'),
-                            'speakers' => __('Speaker(s)', 'lc-func'),
-                            'date' => __('Date', 'lc-func'),
-                            'part_of_series' => __('Part of Series', 'lc-func'),
-                            'description' => __('Description', 'lc-func'),
-                            'topics' => __('Topics', 'lc-func'),
-                            'tags' => __('Tags', 'lc-func'),
-                            'scripture_reference' => __('Scripture References', 'lc-func'),
+                            'sermon_image' => __('Sermon Image', 'lcf'),
+                            'title' => __('Title', 'lcf'),
+                            'speakers' => __('Speaker(s)', 'lcf'),
+                            'date' => __('Date', 'lcf'),
+                            'part_of_series' => __('Part of Series', 'lcf'),
+                            'description' => __('Description', 'lcf'),
+                            'topics' => __('Topics', 'lcf'),
+                            'tags' => __('Tags', 'lcf'),
+                            'scripture_reference' => __('Scripture References', 'lcf'),
                         )
                     ),
                     array(
-                        'title' => __('Which Image Should be Displayed for Each Individual Message in the Series', 'lc-func'),
+                        'title' => __('Which Image Should be Displayed for Each Individual Message in the Series', 'lcf'),
                         'name' => 'choose_image_type_to_display',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'series_featured_image' => __('Series Featured Image', 'lc-func'),
-                            'message_featured_image' => __('Message Featured Image', 'lc-func'),
+                            '' => __('Select', 'lcf'),
+                            'series_featured_image' => __('Series Featured Image', 'lcf'),
+                            'message_featured_image' => __('Message Featured Image', 'lcf'),
                         )
                     ),
                     array(
-                        'title' => __('Previous Resource(s) Minimize When One Moves to Create Another Resource.', 'lc-func'),
+                        'title' => __('Previous Resource(s) Minimize When One Moves to Create Another Resource.', 'lcf'),
                         'name' => 'minimize_previous_resource',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     )
                 )
             ),
             'single_message_view' => array(
-                'title' => __('Individual Message View', 'lc-func'),
+                'title' => __('Individual Message View', 'lcf'),
                 'page' => 'single_message_view',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Message Fields to Display on Front End', 'lc-func'),
+                        'title' => __('Message Fields to Display on Front End', 'lcf'),
                         'name' => 'message_field_to_display',
                         'type' => 'checkbox',
                         'value' => array(
-                            'sermon_image' => __('Sermon Image', 'lc-func'),
-                            'title' => __('Title', 'lc-func'),
-                            'speakers' => __('Speaker(s)', 'lc-func'),
-                            'series' => __('Series(s)', 'lc-func'),
-                            'date' => __('Date', 'lc-func'),
-                            'part_of_series' => __('Part of Series', 'lc-func'),
-                            'description' => __('Description', 'lc-func'),
-                            'topics' => __('Topics', 'lc-func'),
-                            'tags' => __('Tags', 'lc-func'),
-                            'scripture_reference' => __('Scripture References', 'lc-func'),
-                            'additional_resource' => __('Additional Resources', 'lc-func'),
+                            'sermon_image' => __('Sermon Image', 'lcf'),
+                            'title' => __('Title', 'lcf'),
+                            'speakers' => __('Speaker(s)', 'lcf'),
+                            'series' => __('Series(s)', 'lcf'),
+                            'date' => __('Date', 'lcf'),
+                            'part_of_series' => __('Part of Series', 'lcf'),
+                            'description' => __('Description', 'lcf'),
+                            'topics' => __('Topics', 'lcf'),
+                            'tags' => __('Tags', 'lcf'),
+                            'scripture_reference' => __('Scripture References', 'lcf'),
+                            'additional_resource' => __('Additional Resources', 'lcf'),
                         )
                     ),
                     array(
-                        'title' => __('Display the Title of the Message Over the Message Featured Image for Related Messages', 'lc-func'),
+                        'title' => __('Display the Title of the Message Over the Message Featured Image for Related Messages', 'lcf'),
                         'name' => 'title_over_message_featured_img',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'always_show' => __('Always Show', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'always_show' => __('Always Show', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('How Do You Want Each Message Image to Look', 'lc-func'),
+                        'title' => __('How Do You Want Each Message Image to Look', 'lcf'),
                         'name' => 'message_img_type',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'no_overlay' => __('No Overlay', 'lc-func'),
-                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lc-func'),
-                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'no_overlay' => __('No Overlay', 'lcf'),
+                            'on_hover_overlay' => __('Starts without Overlay, On Hover animates to Overlay', 'lcf'),
+                            'start_with_overlay' => __('Starts with Overlay, On Hover animates to No Overlay', 'lcf')
                         )
                     )
                 )
             ),
             'addtnl_rsrc_option' => array(
-                'title' => __('Additional Resource\'s Option', 'lc-func'),
+                'title' => __('Additional Resource\'s Option', 'lcf'),
                 'page' => 'addtnl_rsrc_option',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Display Name Field Value', 'lc-func'),
+                        'title' => __('Display Name Field Value', 'lcf'),
                         'name' => 'display_name_fld_val',
                         'type' => 'textarea',
-                        'placeholder' => __('Enter value like - Video, Audio, Notes, Group Guide', 'lc-func'),
+                        'placeholder' => __('Enter value like - Video, Audio, Notes, Group Guide', 'lcf'),
                         'default' => "Video, \r\nAudio, \r\nNotes, \r\nGroup Guide",
                     ),
                     array(
-                        'title' => __('Language Option', 'lc-func'),
+                        'title' => __('Language Option', 'lcf'),
                         'name' => 'addtnl_rsrc_lng_optn',
                         'type' => 'textarea',
-                        'placeholder' => __('Enter value like - eng:English, spa:Spanish', 'lc-func'),
+                        'placeholder' => __('Enter value like - eng:English, spa:Spanish', 'lcf'),
                         'default' => "eng:English, \r\nspa:Spanish",
                     )
                 )
             ),
             'search_criteria' => array(
-                'title' => __('Search Criteria', 'lc-func'),
+                'title' => __('Search Criteria', 'lcf'),
                 'page' => 'search_criteria',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Front-end Search Keys', 'lc-func'),
+                        'title' => __('Front-end Search Keys', 'lcf'),
                         'name' => 'front_end_search_keys',
                         'type' => 'checkbox',
                         'value' => array(
-                            'title' => __('Title', 'lc-func'),
-                            'author' => __('Author', 'lc-func'),
-                            'topic' => __('Topic', 'lc-func'),
-                            'tag' => __('Tag', 'lc-func'),
-                            'summary' => __('Summary', 'lc-func'),
-                            'video' => __('Video', 'lc-func'),
-                            'image' => __('Image', 'lc-func'),
-                            'scripture_references' => __('Scripture References', 'lc-func'),
+                            'title' => __('Title', 'lcf'),
+                            'author' => __('Author', 'lcf'),
+                            'topic' => __('Topic', 'lcf'),
+                            'tag' => __('Tag', 'lcf'),
+                            'summary' => __('Summary', 'lcf'),
+                            'video' => __('Video', 'lcf'),
+                            'image' => __('Image', 'lcf'),
+                            'scripture_references' => __('Scripture References', 'lcf'),
                         )
                     )
                 )
             ),
             'social_option' => array(
-                'title' => __('Social Options', 'lc-func'),
+                'title' => __('Social Options', 'lcf'),
                 'page' => 'social_option',
-                'desc' => __('', 'lc-func'),
+                'desc' => __('', 'lcf'),
                 'fields' => array(
                     array(
-                        'title' => __('Enable Social Share', 'lc-func'),
+                        'title' => __('Enable Social Share', 'lcf'),
                         'name' => 'social_share',
                         'type' => 'select',
                         'value' => array(
-                            '' => __('Select', 'lc-func'),
-                            'yes' => __('Yes', 'lc-func'),
-                            'no' => __('No', 'lc-func')
+                            '' => __('Select', 'lcf'),
+                            'yes' => __('Yes', 'lcf'),
+                            'no' => __('No', 'lcf')
                         )
                     ),
                     array(
-                        'title' => __('AddThis Script', 'lc-func'),
+                        'title' => __('AddThis Script', 'lcf'),
                         'name' => 'addthis_script',
                         'type' => 'textarea'
                     )
@@ -326,8 +326,8 @@ class LCF_Option_Page
     {
         add_submenu_page(
         	'edit.php?post_type=gc-sermons',
-	        __('Plugin Options', 'lc-func'),
-	        __('Plugin Options', 'lc-func'),
+	        __('Plugin Options', 'lcf'),
+	        __('Plugin Options', 'lcf'),
 	        'manage_options',
 	        'lc-plugin-option',
 	        array($this, 'plugin_option_page_view'));
@@ -389,13 +389,13 @@ class LCF_Option_Page
         );
 
         wp_enqueue_script(
-            'lc-func-admin-option-page',
+            'lcf-admin-option-page',
             LiquidChurch_Functionality::url("assets/js/liquidchurch-page-option{$min}.js"),
             array('jquery', 'lc-jquery-ui-js'),
             LiquidChurch_Functionality::VERSION
         );
 
-        wp_localize_script('lc-func-admin-message-config', 'LiquidChurchAdmin', array(
+        wp_localize_script('lcf-admin-message-config', 'LiquidChurchAdmin', array(
             'path' => LiquidChurch_Functionality::url(),
         ));
     }
@@ -460,11 +460,11 @@ class LCF_Option_Page
                     foreach ($val as $k => $v) {
                         if (!empty($v)) {
                             $type = 'updated';
-                            $message = __('Successfully saved', 'lc-func');
+                            $message = __('Successfully saved', 'lcf');
                             $prev_val[$key][$k] = $v;
                         } else {
                             $type = 'error';
-                            $message = __('Data can not be empty', 'lc-func');
+                            $message = __('Data can not be empty', 'lcf');
                         }
 
                         add_settings_error(
@@ -476,19 +476,19 @@ class LCF_Option_Page
                     }
                 } else {
                     $type = 'error';
-                    $message = __('Data can not be empty', 'lc-func');
+                    $message = __('Data can not be empty', 'lcf');
                     $run_external_setting_err = true;
                 }
             }
         } else {
             $type = 'error';
-            $message = __('Data can not be empty', 'lc-func');
+            $message = __('Data can not be empty', 'lcf');
             $run_external_setting_err = true;
         }
 
         if (empty($input['single_series_view']['series_field_to_display'])) {
             $type = 'error';
-            $message = __('Data can not be empty', 'lc-func');
+            $message = __('Data can not be empty', 'lcf');
             add_settings_error(
                 esc_attr('single_series_view_series_field_to_display'),
                 esc_attr('single_series_view_series_field_to_display'),
@@ -499,7 +499,7 @@ class LCF_Option_Page
 
         if (empty($input['single_series_view']['message_field_to_display'])) {
             $type = 'error';
-            $message = __('Data can not be empty', 'lc-func');
+            $message = __('Data can not be empty', 'lcf');
             add_settings_error(
                 esc_attr('single_series_view_message_field_to_display'),
                 esc_attr('single_series_view_message_field_to_display'),
@@ -510,7 +510,7 @@ class LCF_Option_Page
 
         if (empty($input['single_message_view']['message_field_to_display'])) {
             $type = 'error';
-            $message = __('Data can not be empty', 'lc-func');
+            $message = __('Data can not be empty', 'lcf');
             add_settings_error(
                 esc_attr('single_message_view_message_field_to_display'),
                 esc_attr('single_message_view_message_field_to_display'),
@@ -521,7 +521,7 @@ class LCF_Option_Page
 
         if (empty($input['search_criteria']['front_end_search_keys'])) {
             $type = 'error';
-            $message = __('Data can not be empty', 'lc-func');
+            $message = __('Data can not be empty', 'lcf');
             add_settings_error(
                 esc_attr('search_criteria_front_end_search_keys'),
                 esc_attr('search_criteria_front_end_search_keys'),

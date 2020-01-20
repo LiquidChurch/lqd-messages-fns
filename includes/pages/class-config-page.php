@@ -151,7 +151,7 @@ class LCF_Config_Page
         $min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
         wp_enqueue_script(
-            'lc-func-admin-message-config',
+            'lcf-admin-message-config',
             LiquidChurch_Functionality::url("assets/js/liquidchurch-page-message-config{$min}.js"),
             array(),
             LiquidChurch_Functionality::VERSION
@@ -164,10 +164,10 @@ class LCF_Config_Page
             LiquidChurch_Functionality::VERSION
         );
 
-        wp_localize_script('lc-func-admin-message-config', 'LiquidChurchAdmin', array(
+        wp_localize_script('lcf-admin-message-config', 'LiquidChurchAdmin', array(
             'path' => LiquidChurch_Functionality::url(),
-            'blockui_message' => __('Please wait...', 'lc-func'),
-            'required_message' => __('Please fill all the required values', 'lc-func'),
+            'blockui_message' => __('Please wait...', 'lcf'),
+            'required_message' => __('Please fill all the required values', 'lcf'),
             'ajax_nonce' => wp_create_nonce('sermon_message_config_page'),
         ));
     }
@@ -202,7 +202,7 @@ class LCF_Config_Page
                 if (empty($val[$meta_key])) continue;
                 $reponse[$key] = array(
                     'status' => update_post_meta($key, $meta_key, $val[$meta_key]),
-                    'message' => __('Successfully updated', 'lc-func')
+                    'message' => __('Successfully updated', 'lcf')
                 );
             }
         }
@@ -228,7 +228,7 @@ class LCF_Config_Page
                     if (empty($fval[$meta_key])) continue;
                     $reponse[$formData['series_id']][$fkey] = array(
                         'status' => update_post_meta($fkey, $meta_key, $fval[$meta_key]),
-                        'message' => __('Successfully updated', 'lc-func')
+                        'message' => __('Successfully updated', 'lcf')
                     );
                 }
             }

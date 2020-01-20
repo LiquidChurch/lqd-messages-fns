@@ -66,8 +66,8 @@ class LCF_Metaboxes
 		$cmb = new_cmb2_box( $args );
 
 		$cmb->add_field( array(
-			'name' => __( 'Display Order', 'lc-func' ),
-			'desc' => __( 'Post will appear in the series based on this order', 'lc-func' ),
+			'name' => __( 'Display Order', 'lcf' ),
+			'desc' => __( 'Post will appear in the series based on this order', 'lcf' ),
 			'id'   => $this->display_ordr_meta_id,
 			'type' => 'text_number',
             'attributes'  => array(
@@ -76,20 +76,20 @@ class LCF_Metaboxes
 		) );
 
         $cmb->add_field(array(
-            'name' => __('Exclude as Message', 'lc-func'),
-            'desc' => __('If selected the post will not appear as message in the message listing', 'lc-func'),
+            'name' => __('Exclude as Message', 'lcf'),
+            'desc' => __('If selected the post will not appear as message in the message listing', 'lcf'),
             'id' => $this->exclude_msg_meta_id,
             'type' => 'checkbox',
         ));
 
         $cmb->add_field(array(
-            'name' => __('Position in Message Archive Page', 'lc-func'),
-            'desc' => __('Based on this value, videos will appear above/below the normal messages listing', 'lc-func'),
+            'name' => __('Position in Message Archive Page', 'lcf'),
+            'desc' => __('Based on this value, videos will appear above/below the normal messages listing', 'lcf'),
             'id' => $this->video_msg_appear_pos,
             'type' => 'radio',
             'options' => array(
-                'top' => __('First', 'lc-func'),
-                'bottom' => __('Last', 'lc-func'),
+                'top' => __('First', 'lcf'),
+                'bottom' => __('Last', 'lcf'),
             ),
         ));
 
@@ -105,9 +105,9 @@ class LCF_Metaboxes
 			'id'      => $this->resources_meta_id,
 			'type'    => 'group',
 			'options' => array(
-				'group_title'   => __( 'Resource {#}', 'lc-func' ), // {#} gets replaced by row number
-				'add_button'    => __( 'Add Another Resource', 'lc-func' ),
-				'remove_button' => __( 'Remove Resource', 'lc-func' ),
+				'group_title'   => __( 'Resource {#}', 'lcf' ), // {#} gets replaced by row number
+				'add_button'    => __( 'Add Another Resource', 'lcf' ),
+				'remove_button' => __( 'Remove Resource', 'lcf' ),
 				'sortable'      => true,
 			),
 			'after_group' => array( $this, 'enqueu_box_js' ),
@@ -115,34 +115,34 @@ class LCF_Metaboxes
 
 		$sub_fields = array(
 			array(
-				'name' => __( 'Resource Name', 'lc-func' ),
-				'desc' => __( 'e.g., "Audio for Faces of Grace Sermon"', 'lc-func' ),
+				'name' => __( 'Resource Name', 'lcf' ),
+				'desc' => __( 'e.g., "Audio for Faces of Grace Sermon"', 'lcf' ),
 				'id'   => 'name',
 				'type' => 'text',
 			),
             array(
-                'name' => __('Resource Language', 'lc-func'),
-                'desc' => __('Please select the resource language', 'lc-func'),
+                'name' => __('Resource Language', 'lcf'),
+                'desc' => __('Please select the resource language', 'lcf'),
                 'id' => 'lang',
                 'type' => 'select',
                 'options' => $this->get_lng_fld_option()
             ),
 			array(
-				'name'    => __( 'Display Name', 'lc-func' ),
-				'desc'    => __( 'e.g., "Download Audio"', 'lc-func' ),
+				'name'    => __( 'Display Name', 'lcf' ),
+				'desc'    => __( 'e.g., "Download Audio"', 'lcf' ),
 				'id'      => 'display_name',
                 'type' => 'select',
                 'options' => $this->get_disp_name_fld_option()
 			),
 			array(
-				'name' => __( 'URL or File', 'lc-func' ),
-				'desc' => __( 'Link to OR upload OR select resource"', 'lc-func' ),
+				'name' => __( 'URL or File', 'lcf' ),
+				'desc' => __( 'Link to OR upload OR select resource"', 'lcf' ),
 				'id'   => 'file',
 				'type' => 'file',
 			),
 			array(
-				'name' => __( 'Type of Resource', 'lc-func' ),
-				'desc' => __( 'e.g., image / video / audio / pdf / zip / embed / other. Will autopopulate if selecting media. Leave blank if adding a URL instead of a file.', 'lc-func' ),
+				'name' => __( 'Type of Resource', 'lcf' ),
+				'desc' => __( 'e.g., image / video / audio / pdf / zip / embed / other. Will autopopulate if selecting media. Leave blank if adding a URL instead of a file.', 'lcf' ),
 				'id'   => 'type',
 				'type' => 'text',
             )
@@ -230,14 +230,14 @@ class LCF_Metaboxes
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_script(
-			'lc-func-admin',
+			'lcf-admin',
 			LiquidChurch_Functionality::url( "assets/js/liquidchurch-functionality-admin{$min}.js" ),
 			array( 'cmb2-scripts' ),
 			LiquidChurch_Functionality::VERSION,
 			1
 		);
 
-		wp_localize_script( 'lc-func-admin', 'LiquidChurchAdmin', array( 'id' => $args['id'] ) );
+		wp_localize_script( 'lcf-admin', 'LiquidChurchAdmin', array( 'id' => $args['id'] ) );
 	}
 
 	/**
