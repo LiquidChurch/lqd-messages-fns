@@ -9,18 +9,10 @@
  */
 class LCF_Config_Page
 {
-    /**
-     * Parent plugin class
-     *
-     * @since 0.1.0
-     */
+     // Parent plugin class
     protected $plugin = null;
 
-    /**
-     * ajax call detect
-     *
-     * @var bool|null
-     */
+     // ajax call detect
     protected $ajax_call = null;
 
     /**

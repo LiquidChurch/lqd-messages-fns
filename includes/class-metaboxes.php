@@ -11,40 +11,22 @@
  */
 class LCF_Metaboxes
 {
-	/**
-	 * Additional Resources CMB2 id.
-	 *
-	 * @var   string
-	 */
+	 // Additional Resources CMB2 id. @var   string
 	public $resources_box_id = '';
 
-	/**
-	 * Display order CMB2 id.
-	 *
-	 * @var string
-	 */
+	 // Display order CMB2 id. @var string
 	public $display_ordr_box_id = '';
 
-	/**
-	 * Additional Resources meta id.
-	 *
-	 * @var   string
-	 */
+
+	 // Additional Resources meta id. @var   string
 	public $resources_meta_id = '';
 
-	/**
-	 * Display order meta id.
-	 *
-	 * @var string
-	 */
+	 // Display order meta id. @var string
 	public $display_ordr_meta_id = '';
     public $exclude_msg_meta_id = '';
     public $video_msg_appear_pos = '';
-    /**
-     * Parent plugin class
-     *
-     * @since 0.1.0
-     */
+
+    // Parent plugin class @since 0.1.0
     protected $plugin = null;
 
 	/**

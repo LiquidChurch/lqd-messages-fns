@@ -1,12 +1,12 @@
 <?php
 /**
- * LiquidChurch Functionality Template Loader
+ * LCF Template Loader
  *
  * @package LiquidChurch Functionality
  */
 
 /**
- * LiquidChurch Functionality Template Loader.
+ * LCF Template Loader.
  *
  * @since 0.1.0
  */

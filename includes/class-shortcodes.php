@@ -9,12 +9,7 @@
  * LiquidChurch Functionality Shortcodes.
  */
 class LCF_Shortcodes {
-
-	/**
-	 * Instance of LCF_Shortcodes_Resources
-	 *
-	 * @var LCF_Shortcodes_Resources
-	 */
+	// Instance of LCF_Shortcodes_Resources
 	protected $resources;
 
 	/**

@@ -9,11 +9,7 @@
  */
 class LCF_Option_Page
 {
-    /**
-     * Parent plugin class
-     *
-     * @since 0.1.0
-     */
+     // Parent plugin class
     protected $plugin = null;
 
     protected $sections_config_arr = array();

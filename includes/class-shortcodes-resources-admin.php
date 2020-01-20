@@ -11,12 +11,7 @@
  * @since 0.1.0
  */
 class LCF_Shortcodes_Resources_Admin extends WDS_Shortcode_Admin {
-	/**
-	 * Shortcode Run object
-	 *
-	 * @var   LCF_Shortcodes_Resources_Run
-	 * @since 0.1.0
-	 */
+	 // Shortcode Run object @var   LCF_Shortcodes_Resources_Run @since 0.1.0
 	protected $run;
 
 	/**

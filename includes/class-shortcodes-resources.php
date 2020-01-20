@@ -10,18 +10,10 @@
  */
 class LCF_Shortcodes_Resources {
 
-	/**
-	 * Instance of LCF_Shortcodes_Resources_Run
-	 *
-	 * @var LCF_Shortcodes_Resources_Run
-	 */
+	// Instance of LCF_Shortcodes_Resources_Run
 	protected $run;
 
-	/**
-	 * Instance of LCF_Shortcodes_Resources_Admin
-	 *
-	 * @var LCF_Shortcodes_Resources_Admin
-	 */
+	// Instance of LCF_Shortcodes_Resources_Admin
 	protected $admin;
 
 	/**

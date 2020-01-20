@@ -11,12 +11,7 @@
  * @since 0.1.0
  */
 class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
-
-	/**
-	 * The Shortcode Tag
-	 * @var string
-	 * @since 0.1.0
-	 */
+	 // The Shortcode Tag @var string @since 0.1.0
 	public $shortcode = 'sermon_resources';
 
 	/**
@@ -34,19 +29,10 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
         'resource_lang' => array(), // For resource language
 	);
 
-    /**
-     * Additional Resources meta id.
-     *
-     * @see  LCF_Metaboxes::$resources_meta_id
-     * @var   string
-     */
+     // Additional Resources meta id. @see  LCF_Metaboxes::$resources_meta_id @var   string
     protected $meta_id = '';
 
-    /**
-     * Additional Resources default language
-     *
-     * @var   string
-     */
+     // Additional Resources default language @var   string
     protected $default_lang = 'eng';
 
 	/**
