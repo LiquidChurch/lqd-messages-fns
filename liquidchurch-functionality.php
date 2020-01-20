@@ -75,73 +75,34 @@
      */
     final class LiquidChurch_Functionality
     {
-
-        /**
-         * Current version
-         *
-         * @var  string
-         */
+    	// Current Version
         const VERSION = '0.5.1';
 
-        /**
-         * Plugin options settings key
-         */
+         // Plugin options settings key
         public static $plugin_option_key = 'lc-plugin-settings';
 
-        /**
-         * Singleton instance of plugin
-         *
-         * @var LiquidChurch_Functionality
-         */
+         // Singleton instance of plugin
         protected static $single_instance = null;
 
-        /**
-         * URL of plugin directory
-         *
-         * @var string
-         */
+        // URL of plugin directory
         protected $url = '';
 
-        /**
-         * Path of plugin directory
-         *
-         * @var string
-         */
+        // Path of plugin directory
         protected $path = '';
 
-        /**
-         * Plugin basename
-         *
-         * @var string
-         */
+        // Plugin basename
         protected $basename = '';
 
-        /**
-         * Instance of LCF_Metaboxes
-         *
-         * @var LCF_Metaboxes
-         */
+        // Instance of LCF_Metaboxes
         protected $metaboxes;
 
-        /**
-         * Instance of LCF_Shortcodes
-         *
-         * @var LCF_Shortcodes
-         */
+        // Instance of LCF_Shortcodes
         protected $shortcodes;
 
-        /**
-         * Instance of LCF_Config_Page
-         *
-         * @var LCF_Config_Page
-         */
+        // Instance of LCF_Config_Page
         protected $config_page;
 
-        /**
-         * Instance of LCF_Option_Page
-         *
-         * @var LCF_Option_Page
-         */
+		// Instance of LCF_Option_Page
         protected $option_page;
 
         /**
@@ -266,14 +227,6 @@
             // Make sure any rewrite functionality has been loaded.
             flush_rewrite_rules();
         }
-
-        /**
-         * Deactivate the plugin
-         * Uninstall routines should be in uninstall.php
-         *
-         * @return void
-         */
-        public function _deactivate() { }
 
         /**
          * Init hooks
