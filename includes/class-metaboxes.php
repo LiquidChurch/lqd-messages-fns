@@ -4,7 +4,6 @@
  *
  * @package LiquidChurch Functionality
  */
-
 /**
  * LiquidChurch Functionality Metaboxes Class
  *

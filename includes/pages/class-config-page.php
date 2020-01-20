@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class LCF_Config_Page
  *
@@ -35,17 +34,27 @@ class LCF_Config_Page
         add_action('admin_menu', array($this, 'add_page'));
 
         if ($this->ajax_call == true) {
-            add_action('wp_ajax_sermon_message_config_single_series_update', array($this, 'sermon_message_config_single_series_update_callback'));
-            add_action('wp_ajax_sermon_message_config_all_series_update', array($this, 'sermon_message_config_all_series_update_callback'));
+            add_action('wp_ajax_sermon_message_config_single_series_update', array($this,
+	            'message_config_single_series_update_callback'
+            ));
+            add_action('wp_ajax_sermon_message_config_all_series_update', array($this,
+	            'message_config_all_series_update_callback'
+            ));
         }
     }
 
 	/**
-	 * Add Page
+	 * Add Messages Config Page to Lqd-Messages Admin Menu.
 	 */
     public function add_page()
     {
-        add_submenu_page('edit.php?post_type=gc-sermons', __('Messages Config', 'lc-func'), __('Messages Config', 'lc-func'), 'manage_options', 'sermon-message-config', array($this, 'config_page_view'));
+        add_submenu_page('edit.php?post_type=gc-sermons',
+	        __('Messages Config', 'lcf'),
+	        __('Messages Config', 'lcf'),
+	        'manage_options',
+	        'sermon-message-config',
+	        array($this, 'config_page_view')
+        );
     }
 
 	/**
@@ -55,7 +64,7 @@ class LCF_Config_Page
 	 */
     public function config_page_view()
     {
-        $items = $this->get_all_sermon_messages_ord_by_series();
+        $items = $this->get_all_messages_by_series();
         $arg = array(
             'items' => $items
         );
@@ -72,7 +81,7 @@ class LCF_Config_Page
 	 * @return string
 	 * @throws Exception
 	 */
-    public function get_all_sermon_messages_ord_by_series()
+    public function get_all_messages_by_series()
     {
         $custom_terms = get_terms('gc-sermon-series');
         $items = '';
@@ -181,7 +190,7 @@ class LCF_Config_Page
 	/**
 	 * Sermon Message Config Single Series Update Callback
 	 */
-    public function sermon_message_config_single_series_update_callback()
+    public function message_config_single_series_update_callback()
     {
         $reponse = array();
         $nonce = $_POST['nonce'];
@@ -205,7 +214,7 @@ class LCF_Config_Page
 	/**
 	 * Sermon Message Config All Series Update Callback
 	 */
-    public function sermon_message_config_all_series_update_callback()
+    public function message_config_all_series_update_callback()
     {
         $reponse = array();
         $nonce = $_POST['nonce'];

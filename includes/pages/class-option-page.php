@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class LCF_Option_Page
  *
@@ -305,27 +304,33 @@ class LCF_Option_Page
         add_action('admin_menu', array($this, 'add_page'));
         add_action('admin_init', array($this, 'plugin_settings'));
 
-        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
-        if ($social_share_enable == 'yes') {
-            add_action('wp_footer', array($this, 'add_social_script_wp_footer'));
+        $social_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
+        if ($social_enable == 'yes') {
+            add_action('wp_footer', array($this, 'add_social_footer' ));
         }
     }
 
 	/**
 	 * Add Social Script WP Footer
 	 */
-    public function add_social_script_wp_footer()
+    public function add_social_footer()
     {
         $social_share_script = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'addthis_script');
         echo $social_share_script;
     }
 
 	/**
-	 * Add Page
+	 * Add Plugin Options Page to Lqd Messages Admin Menu.
 	 */
     public function add_page()
     {
-        add_submenu_page('edit.php?post_type=gc-sermons', __('Plugin Options', 'lc-func'), __('Plugin Options', 'lc-func'), 'manage_options', 'lc-plugin-option', array($this, 'plugin_option_page_view'));
+        add_submenu_page(
+        	'edit.php?post_type=gc-sermons',
+	        __('Plugin Options', 'lc-func'),
+	        __('Plugin Options', 'lc-func'),
+	        'manage_options',
+	        'lc-plugin-option',
+	        array($this, 'plugin_option_page_view'));
     }
 
 	/**
