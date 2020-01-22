@@ -42,7 +42,7 @@
      * @param  string $class_name Name of the class being requested.
      * @return void
      */
-    function lc_func_autoload_classes($class_name)
+    function lcf_autoload_classes($class_name)
     {
         if (0 !== strpos($class_name, 'LCF_')) {
             return;
@@ -66,10 +66,10 @@
         }
     }
 
-    spl_autoload_register('lc_func_autoload_classes');
+    spl_autoload_register( 'lcf_autoload_classes' );
 
     /**
-     * Main initiation class
+     * Our main Class - LiquidChurch_Functionality
      *
      * @since  0.1.0
      */
@@ -77,9 +77,7 @@
     {
 
         /**
-         * Current version
-         *
-         * @var  string
+         * Current version: @var  string
          */
         const VERSION = '0.5.1';
 
