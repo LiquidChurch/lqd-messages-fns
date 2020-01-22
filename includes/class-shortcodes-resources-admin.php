@@ -1,14 +1,10 @@
 <?php
 /**
- * LiquidChurch Functionality Shortcodes Resources Admin
- *
- * @package LiquidChurch Functionality
- */
-
-/**
  * LiquidChurch Functionality Shortcodes Resources Admin.
  *
  * @since 0.1.0
+ *
+ * @package LiquidChurch Functionality
  */
 class LCF_Shortcodes_Resources_Admin extends WDS_Shortcode_Admin {
 	/**

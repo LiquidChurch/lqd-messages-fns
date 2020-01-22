@@ -1,14 +1,10 @@
 <?php
 /**
- * LiquidChurch Functionality Shortcodes Resources Run
- *
- * @package LiquidChurch Functionality
- */
-
-/**
  * LiquidChurch Functionality Shortcodes Resources Run.
  *
  * @since 0.1.0
+ *
+ * @package LiquidChurch Functionality
  */
 class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 
@@ -253,6 +249,8 @@ class LCF_Shortcodes_Resources_Run extends WDS_Shortcodes {
 	}
 
 	/**
+	 * Is This a URL?
+	 *
 	 * @param $resource
 	 *
 	 * @return bool

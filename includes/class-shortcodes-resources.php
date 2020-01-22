@@ -1,12 +1,8 @@
 <?php
 /**
- * LiquidChurch Functionality Shortcodes Resources Class
+ * LiquidChurch Functionality Shortcodes Resources.
  *
  * @package LiquidChurch Functionality
- */
-
-/**
- * LiquidChurch Functionality Shortcodes Resources.
  */
 class LCF_Shortcodes_Resources {
 
